@@ -1,0 +1,20 @@
+<div>
+  <div>{{resume.name}}</div>
+  <div>{{resume.position}}</div>
+  <div>
+    <div>Contact: </div>
+    <div>{{resume.contact.email}}</div>
+    <div>{{resume.contact.telephone}}</div>
+    <div>{{resume.contact.location}}</div>
+    <div>{{resume.contact.linkedIn}}</div>
+    <div>{{resume.contact.skype}}</div>
+  </div>
+  <div>{{resume.summary}}</div>
+  <div>
+    <div>Languages: </div>
+    <div *ngFor="let language of resume.languages">
+      <span>{{language.name}}</span>
+      <span>{{language.level}}</span>
+    </div>
+  </div>
+</div>
