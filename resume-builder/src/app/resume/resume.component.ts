@@ -4,23 +4,27 @@ import { Observable } from 'rxjs';
 import { IResume } from './IResume';
 
 @Component({
-  selector: 'app-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.scss']
+    selector: 'app-resume',
+    templateUrl: './resume.component.html',
+    styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
 
-  resume: IResume;
+    resume: IResume;
 
-  constructor(private resumeDataService: ResumeDataService) { }
+    constructor(private resumeDataService: ResumeDataService) { }
 
-  ngOnInit() {
-    this.getResumeData();
-  }
+    ngOnInit() {
+        this.getDefaultResumeData();
+    }
 
-  getResumeData(): void {
-    this.resumeDataService.getResumeData()
-        .subscribe(resume => this.resume = resume);
-  }
+    getDefaultResumeData(): void {
+        this.getResumeData("YZ");
+    }
+
+    getResumeData(resumeName: string): void {
+        this.resumeDataService.getResumeById(resumeName)
+            .subscribe(resume => this.resume = resume);
+    }
 
 }

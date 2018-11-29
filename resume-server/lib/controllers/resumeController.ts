@@ -2,12 +2,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Request, Response } from 'express';
 
-const ResumeDirectory = path.join(__dirname, "../../data");
+const RESUME_DIRECTORY = path.join(__dirname, "../../data");
 
 export class ResumeController {
 
     public getAllResume(req: Request, res: Response) {
-        fs.readdir(ResumeDirectory, (error, files) => {
+        fs.readdir(RESUME_DIRECTORY, (error, files) => {
             if(error) {
                 res.send(error);
             }
@@ -21,7 +21,7 @@ export class ResumeController {
 
     public addNewResume(req: Request, res: Response) {   
         const resumeId: string = req.body.resumeId;
-        fs.writeFile(path.join(ResumeDirectory, `${resumeId}.json`), 'utf8', (error) => {
+        fs.writeFile(path.join(RESUME_DIRECTORY, `${resumeId}.json`), 'utf8', (error) => {
             if(error) {
                 res.send(error);
             }
@@ -31,18 +31,18 @@ export class ResumeController {
 
     public getResumeById(req: Request, res: Response) { 
         const resumeId: string = req.params.resumeId;
-        fs.readFile(path.join(ResumeDirectory, `${resumeId}.json`), 'utf8', (error, resumeData) => {
+        fs.readFile(path.join(RESUME_DIRECTORY, `${resumeId}.json`), 'utf8', (error, resumeData) => {
             if(error) {
                 res.send(error);
             }
-            res.status(200).json(resumeData);
+            res.status(200).json(JSON.parse(resumeData));
         });
     }
 
     public updateResume(req: Request, res: Response) {   
         const resumeId: string = req.params.resumeId;
         const resumeData: string = req.body.resumeData;
-        fs.writeFile(path.join(ResumeDirectory, `${resumeId}.json`), resumeData, (error) => {
+        fs.writeFile(path.join(RESUME_DIRECTORY, `${resumeId}.json`), resumeData, (error) => {
             if(error) {
                 res.send(error);
             }
@@ -52,7 +52,7 @@ export class ResumeController {
 
     public removeResume(req: Request, res: Response) {   
         const resumeId: string = req.body.resumeId;
-        fs.unlink(path.join(ResumeDirectory, `${resumeId}.json`), (error) => {
+        fs.unlink(path.join(RESUME_DIRECTORY, `${resumeId}.json`), (error) => {
             if(error) {
                 res.send(error);
             }
