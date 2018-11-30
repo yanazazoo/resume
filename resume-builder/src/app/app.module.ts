@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ResumeComponent } from './resume/resume.component';
+import { ResumeComponent } from './resume-editor/resume.component';
 
 @NgModule({
   declarations: [

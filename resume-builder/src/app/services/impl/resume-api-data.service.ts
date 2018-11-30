@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { IResume } from './resume/IResume';
 import { Observable } from 'rxjs';
-import { AppSettings } from './app.settings';
 import { HttpClient, HttpHeaders, HttpResponse  } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { ResumeDataService } from 'src/app/services/resume-data.service';
+import { AppSettings } from 'src/app/app.settings';
+import { IResume } from 'src/app/models/IResume';
 
-@Injectable({
-    providedIn: 'root'
-})
-export class ResumeDataService {
+@Injectable()
+export class ResumeApiDataService implements ResumeDataService {
 
-    constructor(private http: HttpClient) { } 
+    constructor(private http: HttpClient) {
+    } 
 
     public getAllResumeNames(): Observable<string[]> {
         return this.http.get<string[]>(`${AppSettings.RESUME_API_ENDPOINT}/resume`);
@@ -37,5 +36,5 @@ export class ResumeDataService {
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         return this.http.delete(`${AppSettings.RESUME_API_ENDPOINT}/resume/${resumeId}`, { headers: headers });
     } 
-      
+
 }

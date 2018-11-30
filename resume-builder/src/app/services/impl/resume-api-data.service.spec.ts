@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ResumeDataService } from './resume-data.service';
+import { ResumeApiDataService } from './resume-api-data.service';
 
-describe('ResumeDataService', () => {
+describe('ResumeApiDataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ResumeDataService = TestBed.get(ResumeDataService);
+    const service: ResumeApiDataService = TestBed.get(ResumeApiDataService);
     expect(service).toBeTruthy();
   });
 });

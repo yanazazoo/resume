@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeDataService } from '../resume-data.service';
-import { Observable } from 'rxjs';
-import { IResume } from './IResume';
+import { IResume } from '../models/IResume';
+import { ResumeApiDataService } from '../services/impl/resume-api-data.service';
+import { ResumeDataService } from '../services/resume-data.service';
 
 @Component({
     selector: 'app-resume',
     templateUrl: './resume.component.html',
-    styleUrls: ['./resume.component.scss']
+    styleUrls: ['./resume.component.scss'],
+    providers: [{
+        provide: ResumeDataService,
+        useClass: ResumeApiDataService
+    }]
 })
 export class ResumeComponent implements OnInit {
 
