@@ -2,24 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { IResume } from '../models/IResume';
 import { ResumeApiDataService } from '../services/impl/resume-api-data.service';
 import { ResumeDataService } from '../services/resume-data.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-    selector: 'app-resume',
-    templateUrl: './resume.component.html',
-    styleUrls: ['./resume.component.scss'],
+    selector: 'resume-editor',
+    templateUrl: './resume-editor.component.html',
+    styleUrls: ['./resume-editor.component.scss'],
     providers: [{
         provide: ResumeDataService,
         useClass: ResumeApiDataService
     }]
 })
-export class ResumeComponent implements OnInit {
+export class ResumeEditorComponent implements OnInit {
 
     resume: IResume;
 
-    constructor(private resumeDataService: ResumeDataService) { }
+    constructor(private resumeDataService: ResumeDataService, private route: ActivatedRoute) { }
 
     ngOnInit() {
-        this.getDefaultResumeData();
+        this.route.params.subscribe((params: Params) => {
+            this.getResumeData(params['id']);
+        });
     }
 
     getDefaultResumeData(): void {

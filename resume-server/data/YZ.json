@@ -1,8 +1,8 @@
 {
     "name": "Yana Zazulinskaya",
-    "position": "Software Deveoper",
+    "position": "Software Developer",
     "contact": {
-        "email": "yanazazoo2gmail.com",
+        "email": "yanazazoo@gmail.com",
         "linkedIn": "yanazazoo",
         "location": "Minsk, Belarus",
         "skype": "yanazazulinskaya",
@@ -23,7 +23,15 @@
             "level": "Elementary"
         }
     ],
-    "education": [],
+    "education": [
+        {
+            "institution": "Belarusian State University",
+            "years": "2011-2016",
+            "faculty": "Faculty of Applied Mathematics and Computer Science",
+            "specialization": "Software Engineer and Financier mathematician (Bachelor)",
+            "additional": "Bachelor’s degree thesis is ”Modelling and research of parameters estimations of the Generalized Autoregressive model with Conditional Heteroskedasticity and with abnormal distribution of standardized innovations”"
+        }
+    ],
     "skills": [],
     "employment": [] 
 }
