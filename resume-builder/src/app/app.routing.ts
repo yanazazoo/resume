@@ -6,7 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
  
 export const AppRoutes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'resume', component: ResumeEditorComponent },
+    { path: 'resume', component: HomeComponent },
     { path: 'resume/:id', component: ResumeEditorComponent },
     { path: '**', component: NotFoundComponent }
 ];

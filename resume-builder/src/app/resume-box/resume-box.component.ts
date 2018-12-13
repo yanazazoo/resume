@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ResumeDataService } from "../services/resume-data.service";
-import { IResume } from "../models/IResume";
-import { IResumeData } from "../models/IResumeData";
+import { ResumeDataService } from "../../shared/services/resume-data.service";
+import { IResumeData } from "../../shared/models/IResumeData";
 
 @Component({
     selector: 'resume-box',

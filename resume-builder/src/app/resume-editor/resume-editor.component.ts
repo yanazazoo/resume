@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IResume } from '../models/IResume';
-import { ResumeApiDataService } from '../services/impl/resume-api-data.service';
-import { ResumeDataService } from '../services/resume-data.service';
+import { IResume } from '../../shared/models/IResume';
+import { ResumeDataService } from '../../shared/services/resume-data.service';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({

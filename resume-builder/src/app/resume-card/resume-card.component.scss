@@ -1,0 +1,31 @@
+@import "../../styles-variables";
+
+.rb-card {
+    display: block;
+    background-color: $light-color;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 15%;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    .rb-card-title {
+        color: $regular-text-color;
+        text-align: center;
+
+        .rb-card-name {
+            font-size: 1.5rem;
+        }
+    }
+
+    .rb-card-image {
+
+        img {
+            width: $avatar-size;
+            height: $avatar-size;
+            border-radius: 50%;
+        }
+    }
+}

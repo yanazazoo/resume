@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpResponse  } from '@angular/common/http';
-import { ResumeDataService } from 'src/app/services/resume-data.service';
+import { ResumeDataService } from '../resume-data.service';
+import { IResumeData } from 'src/shared/models/IResumeData';
 import { AppSettings } from 'src/app/app.settings';
-import { IResume } from 'src/app/models/IResume';
-import { IResumeData } from 'src/app/models/IResumeData';
+import { IResume } from 'src/shared/models/IResume';
 
 @Injectable()
-export class ResumeApiDataService implements ResumeDataService {
+export class ResumeHttpDataService implements ResumeDataService {
 
     constructor(private http: HttpClient) {
     } 

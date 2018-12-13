@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ResumeApiDataService } from './services/impl/resume-api-data.service';
-import { ResumeDataService } from './services/resume-data.service';
+import { ResumeHttpDataService } from './../shared/services/impl/resume-http-data.service';
+import { ResumeDataService } from './../shared/services/resume-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { ResumeDataService } from './services/resume-data.service';
   styleUrls: ['./app.component.scss'],
   providers: [{
     provide: ResumeDataService,
-    useClass: ResumeApiDataService
+    useClass: ResumeHttpDataService
   }]
 })
 export class AppComponent {

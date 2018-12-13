@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { IResume } from "../models/IResume";
-import { IResumeData } from "../models/IResumeData";
+import { IResume } from "../../shared/models/IResume";
+import { IResumeData } from "../../shared/models/IResumeData";
 
 @Component({
     selector: 'resume-card',
