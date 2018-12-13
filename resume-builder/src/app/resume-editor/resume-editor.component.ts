@@ -31,7 +31,9 @@ export class ResumeEditorComponent implements OnInit {
 
     getResumeData(resumeName: string): void {
         this.resumeDataService.getResumeById(resumeName)
-            .subscribe(resume => this.resume = resume);
+            .subscribe((resume: IResume) => {
+                this.resume = resume
+            });
     }
 
 }

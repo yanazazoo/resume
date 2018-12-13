@@ -1,45 +1,51 @@
-<div class="container-fluid">
-  <div class="row re-header">
-    <div class="re-header-image col">
-      <div class="re-title">
-        <div class="re-avatar-image">
-          <div class="re-avatar-image-wrapper">
-              <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/44576947_1987557341324085_7416036930975956992_n.jpg?_nc_cat=103&_nc_ht=scontent-frt3-1.xx&oh=e7e44083a5fa1d2b294b236f980537d4&oe=5C69B769" alt="..." class="img-thumbnail" />
-          </div>            
+<div class="re-body">
+  <div class="re-header">
+    <div class="re-header-image col" 
+        [ngStyle]="{ 'background-image': 'url(' + resume.coverImage + ')'}">      
+    </div>
+    <div class="re-title">        
+      <div class="re-title-details">
+        <div class="re-title-detail name">
+          <h1>{{resume.name}}</h1>
         </div>
-        <div class="re-title-details">
-          <div class="re-title-detail name">{{resume.name}}</div>
-          <div class="re-title-detail position">{{resume.position}}</div>
-          <div class="re-contact-section d-flex">
-              <div class="">{{resume.contact.email}}</div>
-              <div class="">{{resume.contact.telephone}}</div>
-              <div class="">{{resume.contact.location}}</div>
-              <div class="">{{resume.contact.linkedIn}}</div>
-              <div class="">{{resume.contact.skype}}</div>
-          </div> 
-        </div>
+        <div class="re-title-detail position">{{resume.position}}</div>           
       </div>
     </div>
+    <div class="re-contact-section d-flex justify-content-center">
+        <div class="re-contact-detail">{{resume.contact.email}}</div>
+        <div class="re-contact-detail">{{resume.contact.telephone}}</div>
+        <div class="re-contact-detail">{{resume.contact.location}}</div>
+        <div class="re-contact-detail">{{resume.contact.linkedIn}}</div>
+        <div class="re-contact-detail">{{resume.contact.skype}}</div>
+    </div>
   </div>
-  <div class="row re-summary">
-      <div class="col re-summary-text">{{resume.summary}}</div>
-  </div>
-  <div class="row re-languages">    
-    <div class="col">
-        <div class="row re-languages-section-title">Languages: </div>
-        <div class="row re-language" *ngFor="let language of resume.languages">
-          <div class="col re-language-name">{{language.name}}</div>
-          <div class="col re-language-level">{{language.level}}</div>
-        </div>
-      </div>     
-  </div>
-  <div class="row re-educations">    
-      <div class="re-education" *ngFor="let educationBlock of resume.education">
-          <div class="re-education-years">{{educationBlock.years}}</div>
-          <div class="re-education-institution">{{educationBlock.institution}}</div>
-          <div class="re-education-faculty">{{educationBlock.faculty}}</div>
-          <div class="re-education-specialization">{{educationBlock.specialization}}</div>
-          <div class="re-education-additional">{{educationBlock.additional}}</div>
-        </div>
-  </div>
+  <div class="re-main container-fluid">      
+      <div class="row rb-section re-summary">
+          <div class="re-avatar-image">
+            <div class="re-avatar-image-wrapper">
+                <img [src]="resume.profileImage" alt="..." class="img-thumbnail" />
+            </div>            
+          </div>
+          <div class="col re-summary-text">{{resume.summary}}</div>
+      </div>
+      <div class="row rb-section re-languages"> 
+        <div>
+          <h3 class="re-languages-section-title">LANGUAGES </h3>
+          <div class="re-language" *ngFor="let language of resume.languages">
+            <span class="re-language-name">{{language.name}}</span>
+            <span class="re-language-level rb-secondary-info">{{language.level}}</span>
+          </div>
+        </div>          
+      </div>
+      <div class="row rb-section re-educations">  
+          <h3>EDUCATION </h3>  
+          <div class="re-education" *ngFor="let educationBlock of resume.education">
+              <div class="re-education-years">{{educationBlock.years}}</div>
+              <div class="re-education-institution">{{educationBlock.institution}}</div>
+              <div class="re-education-faculty">{{educationBlock.faculty}}</div>
+              <div class="re-education-specialization">{{educationBlock.specialization}}</div>
+              <div class="re-education-additional">{{educationBlock.additional}}</div>
+            </div>
+      </div>
+  </div>  
 </div>

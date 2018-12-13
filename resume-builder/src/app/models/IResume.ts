@@ -7,6 +7,8 @@ import { IEmploymentBlock } from "./IEmploymentBlock";
 export interface IResume {
     name: string;
     position: string;
+    coverImage: string;
+    profileImage: string;
     contact: IContactInfo;
     summary: string;
     languages: ILanguageSkill[];

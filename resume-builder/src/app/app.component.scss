@@ -1,24 +1,29 @@
-$majorColor: #044022;
-$minorColor: #5E8571;
-$lightColor: #BDCDC5;
-$neutralColor: #D3D3D3;
+@import "../styles-variables";
 
 .rb-body {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 
-    header {
-        background-color: $minorColor;
+    .rb-header {
+        background-image: linear-gradient(to bottom right, $majorSecondColor, $majorColor);
         min-height: 4rem;
+
+        .rb-header-text {
+            font-size: 1.5rem;
+            padding: 0 2rem;
+            color: $contrastTextColor;
+        }
     }
 
-    main {
+    .rb-main {
         flex: 1;
     }
 
-    footer {
+    .rb-footer {
         min-height: 4rem;
-        background-color: $lightColor;
+
+        .rb-footer-text {
+            text-align: center;
+            color: $majorColor;
+        }
     }
 }

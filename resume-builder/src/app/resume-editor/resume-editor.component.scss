@@ -1,46 +1,77 @@
-$header-image-height: 300px;
-$avatar-size: 200px;
-$avatar-border: 3px;
-$avatar-margin: 2px;
-$avatar-radius: 2px;
+@import "../../styles-variables";
 
+.re-header {
+    position: relative;
 
+    .re-header-image {
+        height: $header-image-height; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative; 
 
-.re-header-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/44621086_1987554344657718_7310810313828335616_n.jpg?_nc_cat=111&_nc_ht=scontent-frt3-1.xx&oh=1f357e3f23afd0579f14312f5b6bb754&oe=5CA82FD5');
-    height: $header-image-height; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; 
-
-    .re-avatar-image-wrapper {
-        background: gray;
-        width: $avatar-size + 2 * $avatar-margin;
-        height: $avatar-size + 2 * $avatar-margin;
-        border-radius: $avatar-radius;
-
-        img {
-            width: $avatar-size;
-            height: $avatar-size;
-            border: $avatar-border solid white;
-            margin: $avatar-margin;
-            border-radius: $avatar-radius;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            opacity: .6; 
         }
     }
-
-    .re-title-details {
+    
+    .re-title {
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        width: 100%;
 
         .re-title-detail {
             text-align: center;
             color: white;
 
-            .name {
+            &.name {
+                font-size: 3rem;
             }
 
-            .position {
-                position: absolute;
-                bottom: 0;
+            &.position {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .re-contact-section {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        .re-contact-detail {
+            padding-right: 1rem;
+            color: $contrastTextColor;
+        }
+    }
+}
+
+.re-main {
+    padding: 2rem 4rem;    
+    
+    .re-avatar-image-wrapper {
+    
+        img {
+            width: $avatar-size;
+            height: $avatar-size;
+            border-radius: 50%;
+        }
+    }   
+    
+    .re-languages {
+
+        .re-language {
+
+            .re-language-name {
+                margin-right: 0.5rem;
             }
         }
     }
