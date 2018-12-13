@@ -1,11 +1,12 @@
 import { Observable } from "rxjs";
 import { IResume } from "../models/IResume";
 import { Injectable } from "@angular/core";
+import { IResumeData } from "../models/IResumeData";
 
 @Injectable()
 export abstract class ResumeDataService {
 
-    abstract getAllResumeNames(): Observable<string[]>;
+    abstract getAllResume(): Observable<IResumeData[]>;
 
     abstract addNewResume(resumeId: string): Observable<Object>;
 

@@ -1,0 +1,9 @@
+<a class="rb-card" routerLink="/resume/{{resumeId}}" routerLinkActive="active">
+    <div class="rb-card-image">
+        <img [src]="resumeContent.profileImage" />
+    </div>
+    <div class="rb-card-title">
+        <div class="rb-card-name">{{resumeContent.name}}</div>
+        <div class="rb-card-position">{{resumeContent.position}}</div>
+    </div>
+</a>

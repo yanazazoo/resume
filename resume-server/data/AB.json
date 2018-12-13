@@ -1,0 +1,39 @@
+{
+    "name": "Yana Zazulinskaya",
+    "position": "Software Developer",
+    "coverImage": "https://media.licdn.com/dms/image/C5616AQEo_HKZhAAqGQ/profile-displaybackgroundimage-shrink_350_1400/0?e=1550102400&v=beta&t=wPL9y-V3VihSeHnhYHFQEzy5b6Xv5nlfO8fpRgqNWqo",
+    "profileImage": "https://media.licdn.com/dms/image/C5603AQHPTejCdlTgwQ/profile-displayphoto-shrink_200_200/0?e=1550102400&v=beta&t=tURg3RYPkmh0-PHDLlEppcttyh_ef-whQwoSR7KOcZM", 
+    "contact": {
+        "email": "yanazazoo@gmail.com",
+        "linkedIn": "yanazazoo",
+        "location": "Minsk, Belarus",
+        "skype": "yanazazulinskaya",
+        "telephone": "+375292554604"
+    },
+    "summary": "Software Developer with 5 years of professional experience in frontend and backend web development, bachelor in software engineering and applied mathematics (specialized in the financial time series). Strong in OOP, user interface projecting, design patterns, frontend web development (CSS, HTML, JavaScript, TypeScript, AngularJS, jQuery, Bootstrap, Kendo, SASS), backend web development (C#, PowerShell, ASP.NET, ASP.NET MVC 5), expert in MS SharePoint.",
+    "languages": [
+        {
+            "name": "Russian",
+            "level": "Native speaker"
+        },
+        {
+            "name": "English",
+            "level": "Intermediate"
+        },
+        {
+            "name": "Spanish",
+            "level": "Elementary"
+        }
+    ],
+    "education": [
+        {
+            "institution": "Belarusian State University",
+            "years": "2011-2016",
+            "faculty": "Faculty of Applied Mathematics and Computer Science",
+            "specialization": "Software Engineer and Financier mathematician (Bachelor)",
+            "additional": "Bachelor’s degree thesis is ”Modelling and research of parameters estimations of the Generalized Autoregressive model with Conditional Heteroskedasticity and with abnormal distribution of standardized innovations”"
+        }
+    ],
+    "skills": [],
+    "employment": [] 
+}

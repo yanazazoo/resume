@@ -1,22 +1,26 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Request, Response } from 'express';
+import { promiseArray } from '../shared/utilities';
 
 const RESUME_DIRECTORY = path.join(__dirname, "../../data");
 
-export class ResumeController {
+export class ResumeController {    
 
     public getAllResume(req: Request, res: Response) {
-        fs.readdir(RESUME_DIRECTORY, (error, files) => {
-            if(error) {
-                res.send(error);
-            }
-            let resumeNames: string[] = [];
-            for (let file of files) {
-                resumeNames.push(path.basename(file, ".json"));
-            }
-            res.status(200).send(resumeNames);
-        })
+        fs.readdir(RESUME_DIRECTORY, (error, fileNames) => {
+            if(error) res.send(error);
+            promiseArray(fileNames,
+                (fileName, resolve, reject) =>  {
+                    fs.readFile(path.join(RESUME_DIRECTORY, fileName), 'utf-8', (err, resumeContent) => {
+                        if (err) return reject(err);
+                        return resolve({ id: path.basename(fileName, ".json"), resume: JSON.parse(resumeContent)});
+                    });
+                })
+                .then(results => {
+                    res.status(200).send(results);
+                })
+        });
     }
 
     public addNewResume(req: Request, res: Response) {   

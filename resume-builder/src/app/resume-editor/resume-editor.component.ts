@@ -7,11 +7,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 @Component({
     selector: 'resume-editor',
     templateUrl: './resume-editor.component.html',
-    styleUrls: ['./resume-editor.component.scss'],
-    providers: [{
-        provide: ResumeDataService,
-        useClass: ResumeApiDataService
-    }]
+    styleUrls: ['./resume-editor.component.scss']
 })
 export class ResumeEditorComponent implements OnInit {
 

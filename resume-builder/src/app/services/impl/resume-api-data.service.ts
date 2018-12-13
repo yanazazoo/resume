@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpResponse  } from '@angular/common/http';
 import { ResumeDataService } from 'src/app/services/resume-data.service';
 import { AppSettings } from 'src/app/app.settings';
 import { IResume } from 'src/app/models/IResume';
+import { IResumeData } from 'src/app/models/IResumeData';
 
 @Injectable()
 export class ResumeApiDataService implements ResumeDataService {
@@ -11,8 +12,8 @@ export class ResumeApiDataService implements ResumeDataService {
     constructor(private http: HttpClient) {
     } 
 
-    public getAllResumeNames(): Observable<string[]> {
-        return this.http.get<string[]>(`${AppSettings.RESUME_API_ENDPOINT}/resume`);
+    public getAllResume(): Observable<IResumeData[]> {
+        return this.http.get<IResumeData[]>(`${AppSettings.RESUME_API_ENDPOINT}/resume`);
     }
 
     public addNewResume(resumeId: string): Observable<Object> {  
